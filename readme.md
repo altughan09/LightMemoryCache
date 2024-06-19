@@ -6,6 +6,8 @@ LightMemoryCache is a lightweight, thread-safe, in-memory caching library for .N
 
 [![Coverage Status](https://coveralls.io/repos/github/altughan09/LightMemoryCache/badge.svg?branch=main)](https://coveralls.io/github/altughan09/LightMemoryCache?branch=main)
 
+[![Build and Test](https://github.com/altughan09/LightMemoryCache/actions/workflows/main.yml/badge.svg)](https://github.com/altughan09/LightMemoryCache/actions/workflows/main.yml.yml)
+
 ## Features
 
 - **Simple API**: Easy-to-use methods for adding, retrieving, and invalidating cached items.
