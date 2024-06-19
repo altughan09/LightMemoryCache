@@ -20,9 +20,9 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Test
-        run: dotnet test --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=json,cobertura,lcov,teamcity,opencover
+        run: dotnet test --collect:"Code Coverage;Format=Xml;CoverageFileName=coverage.xml" --results-directory ./coverage
       - name: Upload Coverage to Coveralls
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: ./results/coverage/coverage.opencover.xml
+          path-to-lcov: ./results/coverage/coverage.xml
