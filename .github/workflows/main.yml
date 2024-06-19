@@ -24,8 +24,9 @@ jobs:
           dotnet test --no-restore --verbosity normal \
             /p:CollectCoverage=true \
             /p:CoverletOutputFormat=cobertura \
-            /p:CoverletOutput=results/coverage/
+            /p:CoverletOutput=coverage-results/
       - name: Upload Coverage to Coveralls
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: ./coverage-results/coverage.cobertura.xml
