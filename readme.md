@@ -17,7 +17,7 @@ LightMemoryCache is a lightweight, thread-safe, in-memory caching library for .N
 You can install LightMemoryCache via NuGet Package Manager:
 
 ```bash
-Install-Package EasyMemoryCache
+Install-Package LightMemoryCache
 ```
 
 or dotnet CLI
