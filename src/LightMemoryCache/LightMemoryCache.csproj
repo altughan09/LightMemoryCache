@@ -31,7 +31,7 @@
   <ItemGroup>
     <None Include="..\..\LICENSE" Pack="true"/>
     <None Include="..\..\README.md" Pack="true"/>
-    <None Include=".\Icons\icon.jpg" Pack="true" />
+    <None Include=".\Icons\icon.png" Pack="true" />
   </ItemGroup>
 
 </Project>
