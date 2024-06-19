@@ -2,8 +2,8 @@
 
 LightMemoryCache is a lightweight, thread-safe, in-memory caching library for .NET applications. It provides a simple and efficient way to cache data objects with customizable expiration times.
 
-[![Coverage Status](https://coveralls.io/repos/github/altughan09/LightMemoryCache/badge.svg?branch=main)](https://coveralls.io/github/altughan09/LightMemoryCache?branch=main)
 [![Build and Test](https://github.com/altughan09/LightMemoryCache/actions/workflows/main.yml/badge.svg)](https://github.com/altughan09/LightMemoryCache/actions/workflows/main.yml.yml)
+[![Coverage Status](https://coveralls.io/repos/github/altughan09/LightMemoryCache/badge.svg?branch=main)](https://coveralls.io/github/altughan09/LightMemoryCache?branch=main)
 [![NuGet](https://buildstats.info/nuget/LightMemoryCache)](http://www.nuget.org/packages/LightMemoryCache)
 
 ## Features
