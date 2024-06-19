@@ -2,7 +2,7 @@
 
 LightMemoryCache is a lightweight, thread-safe, in-memory caching library for .NET applications. It provides a simple and efficient way to cache data objects with customizable expiration times.
 
-[![NuGet](https://buildstats.info/nuget/EasyMemoryCache)](http://www.nuget.org/packages/EasyMemoryCache)
+[![NuGet](https://buildstats.info/nuget/LightMemoryCache)](http://www.nuget.org/packages/LightMemoryCache)
 
 ## Features
 
