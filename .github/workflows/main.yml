@@ -29,4 +29,4 @@ jobs:
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: ./coverage-results/coverage.cobertura.xml
+          path-to-lcov: ${{ github.workspace }}/coverage-results/coverage.cobertura.xml
