@@ -21,7 +21,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
       - name: Test
         run: |
-          dotnet test --no-build --verbosity normal \
+          dotnet test --no-restore --verbosity normal \
             /p:CollectCoverage=true \
             /p:CoverletOutputFormat=cobertura \
             /p:CoverletOutput=coverage-results/
