@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿using System.Diagnostics.CodeAnalysis;
+using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
 using LightMemoryCache.Configuration;
 using LightMemoryCache.Contracts;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.Options;
 
 namespace LightMemoryCache.Benchmark;
 
+[ExcludeFromCodeCoverage]
 public class Program
 {
     public static void Main(string[] args)
