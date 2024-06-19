@@ -36,6 +36,6 @@ jobs:
 
       - name: Push
 
-        run: dotnet nuget push LightMemoryCache.${{ env.VERSION }}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push LightMemoryCache.${{ env.VERSION }}.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
