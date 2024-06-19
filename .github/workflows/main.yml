@@ -29,3 +29,4 @@ jobs:
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: LightMemoryCache/tests/LightMemoryCache.Tests/results/coverage/coverage.cobertura.xml
