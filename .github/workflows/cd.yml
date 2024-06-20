@@ -38,7 +38,7 @@ jobs:
         run: dotnet nuget add source https://nuget.pkg.github.com/altughan09/index.json --username altughan09 --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github
 
       - name: Push to GitHub Packages
-        run: dotnet nuget push LightMemoryCache.${{ env.VERSION }}.nupkg --api-key ${{ secrets.NUGET_API_TOKEN }} --source github --skip-duplicate
+        run: dotnet nuget push LightMemoryCache.${{ env.VERSION }}.nupkg --source github --skip-duplicate --api-key ${{ secrets.NUGET_API_TOKEN }}
         env:
           NUGET_API_TOKEN: ${{ secrets.NUGET_API_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
