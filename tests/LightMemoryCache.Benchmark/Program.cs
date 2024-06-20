@@ -18,6 +18,7 @@ public class Program
     }
 }
 
+[ExcludeFromCodeCoverage]
 public class CacheBenchmark
 {
     private ILightMemoryCache? _lightMemoryCache;
@@ -104,6 +105,7 @@ public class CacheBenchmark
         }
     }
     
+    [ExcludeFromCodeCoverage]
     private class ComplexObject
     {
         public int Id { get; set; }
