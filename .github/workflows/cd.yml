@@ -36,8 +36,9 @@ jobs:
 
       - name: Push
         run: |
-          curl -F "package=@LightMemoryCache.${{ env.VERSION }}.nupkg" \
+          curl -F "package=@$(ls LightMemoryCache.${{ env.VERSION }}.nupkg)" \
               -H "X-NuGet-ApiKey: ${{ secrets.NUGET_API_KEY }}" \
               https://api.nuget.org/v3/index.json
+
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
