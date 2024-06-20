@@ -49,6 +49,8 @@ var defaultExpirationInMinutes = configurationRoot.GetValue<int>("CacheOptions:D
 services.AddLightMemoryCache(options => { options.DefaultExpirationInMinutes = defaultExpirationInMinutes; });
 ```
 
+appsettings.json
+
 ```json
 "CacheOptions": {
     "DefaultExpirationInMinutes": "15"
@@ -61,10 +63,25 @@ Dependency injection
 public class CountryService : ICountryService
 {
     private readonly ILightMemoryCache _cache;
+    private readonly ICountryRepository _countryRepository;
+    private const string CountryCacheKey = "AllCountries";
 
-    public CountryService(ILightMemoryCache cache)
+    public CountryService(ILightMemoryCache cache, ICountryRepository countryRepository)
     {
         _cache = cache;
+        _countryRepository = countryRepository;
+    }
+
+    public async Task<IEnumerable<CountryDto>> GetAllAsync()
+    {
+        if (_cache.TryGetValue(CountryCacheKey, out IEnumerable<CountryDto> cachedCountries))
+        {
+            return cachedCountries;
+        }
+
+        var countries = await _countryRepository.GetAllAsync();
+        _cache.Add(CountryCacheKey, countries, TimeSpan.FromMinutes(30));
+        return countries;
     }
     // ...
 }
