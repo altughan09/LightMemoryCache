@@ -42,10 +42,7 @@ jobs:
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Add Nuget source
-        run: dotnet nuget add source https://api.nuget.org/v3/index.json --username altughanozengi --password ${{ secrets.NUGET_API_KEY }} --store-password-in-clear-text --name nuget
-
-      - name: Push to NuGet.org
-        run: dotnet nuget push LightMemoryCache.${{ env.VERSION }}.nupkg --source nuget --skip-duplicate -k ${{ secrets.NUGET_API_KEY }}
+      - name: Push to Nuget.org
+        run: dotnet nuget push LightMemoryCache.${{ env.VERSION }}.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate -k ${{ secrets.NUGET_API_KEY }} --no-symbols true
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
