@@ -58,16 +58,16 @@ services.AddLightMemoryCache(options => { options.DefaultExpirationInMinutes = d
 Dependency injection
 
 ```C#
-    public class CountryService : ICountryService
-    {
-        private readonly ILightMemoryCache _cache;
+public class CountryService : ICountryService
+{
+    private readonly ILightMemoryCache _cache;
 
-        public CountryService(ILightMemoryCache cache)
-        {
-            _cache = cache;
-        }
-    // ...
+    public CountryService(ILightMemoryCache cache)
+    {
+        _cache = cache;
     }
+    // ...
+}
 ```
 
 ## Benchmark
