@@ -34,15 +34,18 @@ jobs:
       - name: Pack
         run: dotnet pack --configuration Release /p:Version=${{ env.VERSION }} --no-build --output .
 
-      - name: Add GitHub Packages source
-        run: dotnet nuget add source https://nuget.pkg.github.com/altughan09/index.json --username altughan09 --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github
+      # - name: Add GitHub Packages source
+      #   run: dotnet nuget add source https://nuget.pkg.github.com/altughan09/index.json --username altughan09 --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github
 
-      - name: Push to GitHub Packages
-        run: dotnet nuget push LightMemoryCache.${{ env.VERSION }}.nupkg --source github --skip-duplicate -k ${{ secrets.GITHUB_TOKEN }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Push to GitHub Packages
+      #   run: dotnet nuget push LightMemoryCache.${{ env.VERSION }}.nupkg --source github --skip-duplicate -k ${{ secrets.GITHUB_TOKEN }}
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add Nuget source
+        run: dotnet nuget add source https://api.nuget.org/v3/index.json --username altughanozengi --password ${{ secrets.NUGET_API_KEY }} --store-password-in-clear-text --name nuget
 
       - name: Push to NuGet.org
-        run: dotnet nuget push LightMemoryCache.${{ env.VERSION }}.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push LightMemoryCache.${{ env.VERSION }}.nupkg --source nuget --skip-duplicate -k ${{ secrets.NUGET_API_KEY }}
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
