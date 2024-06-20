@@ -18,7 +18,9 @@
     <FileVersion>1.0.0.1</FileVersion>
     <Title>LightMemoryCache</Title>
     <Copyright>2024 © Altughan Ozengi</Copyright>
+    <PackageIcon>icon.png</PackageIcon>
     <Icon>https://raw.githubusercontent.com/altughan09/LightMemoryCache/main/src/LightMemoryCache/Icons/icon.jpg</Icon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,8 +32,8 @@
 
   <ItemGroup>
     <None Include="..\..\LICENSE" Pack="true"/>
-    <None Include="..\..\README.md" Pack="true"/>
-    <None Include=".\Icons\icon.png" Pack="true" />
+    <None Include="README.md" Pack="true" PackagePath=""/>
+    <None Include="Icons\icon.png" Pack="true" PackagePath=""/>
   </ItemGroup>
 
 </Project>
