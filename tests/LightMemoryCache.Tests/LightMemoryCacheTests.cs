@@ -122,7 +122,6 @@ public class LightMemoryCacheTests
         Assert.False(_cache.TryGetValue<string>(key2, out _));
     }
 
-    [ExcludeFromCodeCoverage]
     private class User
     {
         public string Name { get; set; } = default!;
