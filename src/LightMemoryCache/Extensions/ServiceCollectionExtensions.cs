@@ -9,9 +9,17 @@ namespace LightMemoryCache.Extensions;
 [ExcludeFromCodeCoverage]
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddLightMemoryCache(this IServiceCollection services, Action<CacheOptions> optionsProvider)
+    public static IServiceCollection AddLightMemoryCache(this IServiceCollection services, Action<CacheOptions>? optionsProvider = null)
     {
-        services.Configure(optionsProvider);
+        if (optionsProvider != null)
+        {
+            services.Configure(optionsProvider);
+        }
+        else
+        {
+            services.Configure<CacheOptions>(_ => { });
+        }
+
         services.AddSingleton<ILightMemoryCache, LightMemoryCache>();
         return services;
     }

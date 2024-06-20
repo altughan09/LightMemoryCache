@@ -6,5 +6,5 @@ namespace LightMemoryCache.Configuration;
 [ExcludeFromCodeCoverage]
 public class CacheOptions
 {
-    public int DefaultExpirationInMinutes { get; set; }
+    public int DefaultExpirationInMinutes { get; set; } = 60;
 }
