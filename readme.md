@@ -28,6 +28,48 @@ or dotnet CLI
 dotnet add package LightMemoryCache
 ```
 
+## Usage
+
+Register the component:
+
+```C#
+services.AddLightMemoryCache();
+```
+
+or
+
+```C#
+var configurationRoot = new ConfigurationBuilder()
+                        .SetBasePath(Directory.GetCurrentDirectory())
+                        .AddJsonFile("appsettings.json", false)
+                        .Build();
+
+var defaultExpirationInMinutes = configurationRoot.GetValue<int>("CacheOptions:DefaultExpirationInMinutes");
+
+services.AddLightMemoryCache(options => { options.DefaultExpirationInMinutes = defaultExpirationInMinutes; });
+```
+
+```json
+"CacheOptions": {
+    "DefaultExpirationInMinutes": "Redis"
+}
+```
+
+Dependency injection
+
+```C#
+    public class CountryService : ICountryService
+    {
+        private readonly ILightMemoryCache _cache;
+
+        public CountryService(ILightMemoryCache cache)
+        {
+            _cache = cache;
+        }
+    // ...
+    }
+```
+
 ## Benchmark
 
 ### LightMemoryCache vs MemoryCache
