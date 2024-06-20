@@ -36,6 +36,7 @@ jobs:
 
       - name: Push
         run: |
+          dotnet nuget setapikey ${{ secrets.NUGET_API_KEY }}
           dotnet nuget add source https://nuget.pkg.github.com/altughan09/index.json --username altughan09 --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github
           dotnet nuget push ${{ github.workspace }}/LightMemoryCache.${{ env.VERSION }}.nupkg --source github --skip-duplicate
 
