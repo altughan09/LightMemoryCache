@@ -17,7 +17,7 @@ public static class ServiceCollectionExtensions
         }
         else
         {
-            services.Configure<CacheOptions>(_ => { });
+            services.Configure<CacheOptions>(options => { options.DefaultExpirationInMinutes = 60; });
         }
 
         services.AddSingleton<ILightMemoryCache, LightMemoryCache>();

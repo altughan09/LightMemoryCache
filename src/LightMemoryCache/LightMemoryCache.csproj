@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   
   <PropertyGroup>
+    <PackageId>LightMemoryCache</PackageId>
     <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -9,13 +10,12 @@
     <PackageTags>caching, memorycache, lightweight, thread-safe, dotnet, net6.0, net7.0, net8.0, nuget, cache</PackageTags>
     <PackageProjectUrl>https://github.com/altughan09/LightMemoryCache</PackageProjectUrl>
     <RepositoryUrl>https://github.com/altughan09/LightMemoryCache</RepositoryUrl>
-    <RepositoryType>GitHub</RepositoryType>
+    <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Version>1.0.0</Version>
     <PackageVersion Condition=" '$(Version)' == '' ">1.0.2</PackageVersion>
     <AssemblyVersion>1.0.0.1</AssemblyVersion>
     <FileVersion>1.0.0.1</FileVersion>
-    <PackageId>LightMemoryCache</PackageId>
     <Title>LightMemoryCache</Title>
     <Copyright>2024 © Altughan Ozengi</Copyright>
     <Icon>https://raw.githubusercontent.com/altughan09/LightMemoryCache/main/src/LightMemoryCache/Icons/icon.jpg</Icon>
