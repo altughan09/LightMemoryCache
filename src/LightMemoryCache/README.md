@@ -51,7 +51,7 @@ services.AddLightMemoryCache(options => { options.DefaultExpirationInMinutes = d
 
 ```json
 "CacheOptions": {
-    "DefaultExpirationInMinutes": "Redis"
+    "DefaultExpirationInMinutes": "15"
 }
 ```
 
